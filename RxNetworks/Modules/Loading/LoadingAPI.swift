@@ -18,7 +18,7 @@ extension LoadingAPI: NetworkAPI {
         return NetworkConfig.baseURL
     }
     
-    var path: String {
+    var path: APIPath {
         return "/post"
     }
     

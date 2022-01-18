@@ -84,10 +84,7 @@ internal struct NetworkObjectAPI: NetworkAPI {
     var cdy_test: String?
     
     public var ip: APIHost {
-        if let cdy_ip = cdy_ip {
-            return cdy_ip
-        }
-        return NetworkConfig.baseURL
+        return cdy_ip ?? NetworkConfig.baseURL
     }
     
     public var path: String {
@@ -99,24 +96,15 @@ internal struct NetworkObjectAPI: NetworkAPI {
     }
     
     public var method: APIMethod {
-        if let cdy_method = cdy_method {
-            return cdy_method
-        }
-        return NetworkConfig.baseMethod
+        return cdy_method ?? NetworkConfig.baseMethod
     }
     
     public var plugins: APIPlugins {
-        if let cdy_plugins = cdy_plugins {
-            return cdy_plugins
-        }
-        return []
+        return cdy_plugins ?? []
     }
     
     public var stubBehavior: APIStubBehavior {
-        if let cdy_stubBehavior = cdy_stubBehavior {
-            return cdy_stubBehavior
-        }
-        return StubBehavior.never
+        return cdy_stubBehavior ?? StubBehavior.never
     }
     
     public var sampleData: Data {

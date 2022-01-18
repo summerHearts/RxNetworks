@@ -15,7 +15,7 @@ enum CacheAPI: NetworkAPI {
         return "https://www.httpbin.org"
     }
     
-    var path: String {
+    var path: APIPath {
         return "/post"
     }
     

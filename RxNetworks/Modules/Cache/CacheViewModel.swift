@@ -27,10 +27,7 @@ class CacheViewModel: NSObject {
         
         let output = Output(items: elements.asDriver())
         
-        request(input.count)
-            .asObservable()
-            .bind(to: elements)
-            .disposed(by: disposeBag)
+        request(input.count).drive(elements).disposed(by: disposeBag)
         
         return output
     }
@@ -40,7 +37,6 @@ extension CacheViewModel {
     
     func request(_ count: Int) -> Driver<[CacheModel]> {
         CacheAPI.cache(count).request()
-            .asObservable()
             .mapHandyJSON(HandyDataModel<[CacheModel]>.self)
             .compactMap { $0.data }
             .observe(on: MainScheduler.instance) // 结果在主线程返回

@@ -26,15 +26,14 @@ extension NetworkAPI {
     /// Protocol oriented network request, Indicator plugin are added by default
     /// Example:
     ///
-    ///     LoadingAPI.test2("666").request()
-    ///        .asObservable()
-    ///        .mapJSON()
-    ///        .subscribe { [weak self] text in
-    ///            self?.data.accept(text)
-    ///        } onError: { error in
-    ///            D.DLog("Network failed: \(error.localizedDescription)")
-    ///        }
-    ///        .disposed(by: disposeBag)
+    ///     func request(_ count: Int) -> Driver<[CacheModel]> {
+    ///         CacheAPI.cache(count).request()
+    ///                 .mapHandyJSON(HandyDataModel<[CacheModel]>.self)
+    ///                 .compactMap { $0.data }
+    ///                 .observe(on: MainScheduler.instance) // The result is returned on the main thread
+    ///                 .delay(.seconds(1), scheduler: MainScheduler.instance) // Delay 1 second to return
+    ///                 .asDriver(onErrorJustReturn: []) // return null at the moment of error
+    ///     }
     ///
     /// - Parameter callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
     /// - Returns: Single sequence JSON object.
@@ -88,6 +87,10 @@ extension NetworkAPI {
         return URL(string: ip)!
     }
     
+    public var path: APIPath {
+        return ""
+    }
+    
     public var validationType: Moya.ValidationType {
         return .successCodes
     }
@@ -111,9 +114,9 @@ extension NetworkAPI {
             param = NetworkConfig.baseParameters.merging(parameters) { $1 }
         }
         switch method {
-        case .get:
+        case APIMethod.get:
             return .requestParameters(parameters: param, encoding: URLEncoding.default)
-        case .post:
+        case APIMethod.post:
             return .requestParameters(parameters: param, encoding: JSONEncoding.default)
         default:
             return .requestParameters(parameters: param, encoding: JSONEncoding.default)

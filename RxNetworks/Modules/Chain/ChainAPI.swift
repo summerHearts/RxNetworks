@@ -19,7 +19,7 @@ extension ChainAPI: NetworkAPI {
         return NetworkConfig.baseURL
     }
     
-    var path: String {
+    var path: APIPath {
         switch self {
         case .test:
             return "/ip"
