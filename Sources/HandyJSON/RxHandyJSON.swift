@@ -60,6 +60,24 @@ public extension Observable where Element: Any {
     }
 }
 
+public extension Single where Element: Any {
+    
+    @discardableResult
+    func mapHandyJSON<H: HandyJSON>(_ type: H.Type) -> Observable<H> {
+        return self.asObservable().mapHandyJSON(H.self)
+    }
+    
+    @discardableResult
+    func mapHandyJSON2Model<H: HandyJSON>(_ type: H.Type, atKeyPath keyPath: String? = nil) -> Observable<H> {
+        return self.asObservable().mapHandyJSON2Model(H.self, atKeyPath: keyPath)
+    }
+    
+    @discardableResult
+    func mapHandyJSON2Array<H: HandyJSON>(_ type: H.Type, atKeyPath keyPath: String? = nil) -> Observable<[H]> {
+        return self.asObservable().mapHandyJSON2Array(H.self, atKeyPath: keyPath)
+    }
+}
+
 private func HandyJSON2Model<H: HandyJSON>(_ type: H.Type, element: Any?) -> H? {
     if let string = element as? String, let model = H.deserialize(from: string) {
         return model
