@@ -33,9 +33,13 @@ public enum NetworkCacheType {
 /// Cache plug-in, based on YYCache package use
 public final class NetworkCachePlugin {
     
-    private static let kCacheName = "ykj.Network.cache.plugin"
+    static let kCacheName = "ykj.Network.cache.plugin"
     private lazy var cache: YYCache? = {
         let cache = YYCache.init(name: NetworkCachePlugin.kCacheName)
+        if let cache = cache {
+            cache.memoryCache.countLimit = CacheManager.maxCountLimit
+            cache.memoryCache.costLimit = CacheManager.maxCostLimit
+        }
         return cache
     }()
     
