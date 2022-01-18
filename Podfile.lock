@@ -6,41 +6,41 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - RxCocoa (6.2.0):
-    - RxRelay (= 6.2.0)
-    - RxSwift (= 6.2.0)
-  - RxNetworks (0.0.7):
-    - RxNetworks/HandyJSON (= 0.0.7)
-    - RxNetworks/MoyaNetwork (= 0.0.7)
-    - RxNetworks/MoyaPlugins (= 0.0.7)
-  - RxNetworks/HandyJSON (0.0.7):
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxNetworks (0.0.8):
+    - RxNetworks/HandyJSON (= 0.0.8)
+    - RxNetworks/MoyaNetwork (= 0.0.8)
+    - RxNetworks/MoyaPlugins (= 0.0.8)
+  - RxNetworks/HandyJSON (0.0.8):
     - HandyJSON
     - RxSwift
-  - RxNetworks/MoyaNetwork (0.0.7):
+  - RxNetworks/MoyaNetwork (0.0.8):
     - Moya
     - RxSwift
-  - RxNetworks/MoyaPlugins (0.0.7):
-    - RxNetworks/MoyaPlugins/Cache (= 0.0.7)
-    - RxNetworks/MoyaPlugins/Debugging (= 0.0.7)
-    - RxNetworks/MoyaPlugins/Indicator (= 0.0.7)
-    - RxNetworks/MoyaPlugins/Loading (= 0.0.7)
-    - RxNetworks/MoyaPlugins/Warning (= 0.0.7)
-  - RxNetworks/MoyaPlugins/Cache (0.0.7):
+  - RxNetworks/MoyaPlugins (0.0.8):
+    - RxNetworks/MoyaPlugins/Cache (= 0.0.8)
+    - RxNetworks/MoyaPlugins/Debugging (= 0.0.8)
+    - RxNetworks/MoyaPlugins/Indicator (= 0.0.8)
+    - RxNetworks/MoyaPlugins/Loading (= 0.0.8)
+    - RxNetworks/MoyaPlugins/Warning (= 0.0.8)
+  - RxNetworks/MoyaPlugins/Cache (0.0.8):
     - RxNetworks/MoyaNetwork
     - YYCache
-  - RxNetworks/MoyaPlugins/Debugging (0.0.7):
+  - RxNetworks/MoyaPlugins/Debugging (0.0.8):
     - RxNetworks/MoyaNetwork
-  - RxNetworks/MoyaPlugins/Indicator (0.0.7):
+  - RxNetworks/MoyaPlugins/Indicator (0.0.8):
     - RxNetworks/MoyaNetwork
-  - RxNetworks/MoyaPlugins/Loading (0.0.7):
+  - RxNetworks/MoyaPlugins/Loading (0.0.8):
     - MBProgressHUD
     - RxNetworks/MoyaNetwork
-  - RxNetworks/MoyaPlugins/Warning (0.0.7):
+  - RxNetworks/MoyaPlugins/Warning (0.0.8):
     - MBProgressHUD
     - RxNetworks/MoyaNetwork
-  - RxRelay (6.2.0):
-    - RxSwift (= 6.2.0)
-  - RxSwift (6.2.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -67,10 +67,10 @@ SPEC CHECKSUMS:
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
-  RxNetworks: bb9adc507dcecde4323c79cc2f77da0de8df8c7b
-  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
-  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxNetworks: 97ebd9df5e7cc4c5b7f51f02fedb74de24336027
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
 PODFILE CHECKSUM: efd436fb382605fd93ac0c980d5e390095bc7d03
